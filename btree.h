@@ -199,5 +199,26 @@ int count(struct node *r)
          del(r->right);
      }
 }
+       
+       void print(int arr[],int index)
+{
+    for(int i=0 ; i<=index ; i++ )
+    printf("%d \t",arr[i]);
+    printf("NULL\n");
+}
+
+void path(struct node *root,int arr[] ,int index)
+{
+    if(root==NULL)
+    return;
+    else
+    {
+    arr[index]=root->data;
+    if(root->left==NULL && root->right==NULL)
+    print(arr , index);
+    path(root->left,arr,index+1);
+    path(root->right,arr,index+2);
+
+    }
 
 }
