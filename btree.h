@@ -167,7 +167,7 @@ int count(struct node *r)
     return(c);
 }
   
-   int max(struct node*r)
+int max(struct node*r)
 {
     int result;
     if(r==NULL)
@@ -189,3 +189,19 @@ int count(struct node *r)
         }
     }
 }
+    
+
+void del(struct node* r)
+{
+    if(r->left==NULL && r->right==NULL)
+     free(r);
+     else
+     {
+         del(r->left);
+         del(r->right);
+     }
+}
+
+    
+    
+
