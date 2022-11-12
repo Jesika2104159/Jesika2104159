@@ -188,4 +188,16 @@ int count(struct node *r)
             return(r->data);
         }
     }
+       
+ void del(struct node* r)
+{
+    if(r->left==NULL && r->right==NULL)
+     free(r);
+     else
+     {
+         del(r->left);
+         del(r->right);
+     }
+}
+
 }
