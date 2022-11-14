@@ -78,7 +78,7 @@ void search(struct node *r, int val)
     if(x==0)
     printf("Element %d NOT found in tree!!",val);
     else
-    printf("Element %d found in the tree");
+    printf("Element %d found in the tree", val);
 }
  
   int c=0;
