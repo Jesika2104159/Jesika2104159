@@ -72,7 +72,7 @@ int t_search(struct node*r ,int val)
     return(1);
 }
   
-void search(struct node *t, int val)
+void search(struct node *r, int val)
 {
     int x=t_search(r,val);
     if(x==0)
