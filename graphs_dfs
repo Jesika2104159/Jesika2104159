@@ -72,16 +72,16 @@ int main() {
     void dfs(struct Graph * gr, int start){
         for (int i = 0; i < V; i++){
             gr->vis[i] = 0;
-        }//did this to make sure that all the nodes are marked 0 for unvisited before we start the BFS
+        }//did this to make sure that all the nodes are marked 0 for unvisited before we start the DFS
         printf(">>DFS Traversal<<\n");
         struct Graph * graph = gr;
         struct stack * q = createstack();
-        q = push(q, start); //adding the starting vertex to the queue of "to be visited queue"    
+        q = push(q, start); //adding the starting vertex to the stack of "to be visited stack"    
         graph->vis[start] = 1; //marking the first/starting node as visited by making the array value of that index as 1
        
         while  (q->top > -1){ //while loop until the stack is empty
            
-            int visit = pop(q); //it's important to note the node which is to be removed so that we can add the adjacent node of the removed node to the queue of to be visited noded.
+            int visit = pop(q); //it's important to note the node which is to be removed so that we can add the adjacent node of the removed node to the stack of to be visited noded.
             printf("%d->", visit); //printing the node which is visited
             struct node * temp = graph->vertices[visit]; //taking the first adjacent node as temp
             while (temp){//loop to access all the nodes in the adjacency list
@@ -93,7 +93,7 @@ int main() {
             }
            
         }
-        printf("END\n"); //Happy Ending!
+        printf("END\n");
     }
    
 
